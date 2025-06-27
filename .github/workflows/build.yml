@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+
   DigaOla:
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +16,6 @@ jobs:
         uses: ./.github/actions/DigaOla-action
 
   Build:
-    needs: DigaOla
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +28,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name : Set Gradle Permission
-        run: chmod +x ./gradlew
-
+      - name: Setup Gradle Permissions
+        run: chmod +x gradlew
 
       - run: ./gradlew build
