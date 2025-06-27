@@ -19,6 +19,8 @@ public class App {
 
         int entrada = sc.nextInt();
 
+
+
         System.out.println("Insira a temperatura a ser convertida: ");
         int temp = sc.nextInt();
 
